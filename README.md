@@ -1,7 +1,14 @@
 # Around
 ## Introduction
-This project aims to provide a personalized job search web service. It can recommend the jobs near your location based on your favorite jobs in records.
+This project aims to provide a geo-based social network web application where users can post message, and media files, and can also find any other user's posts (filtered by Google Vision for human face score > 0.9) nearby in Google Map.
 
 ## Technologies
-* Frontend: CSS, HTML, Javascript, AJAX
-* Backend: Java servlets, MySQL, content-based recommendation, Amazon EC2, Github API (to request for job info), MonkeyLearn API (to extract keywords from job decriptions)
+* Frontend: React JS, Ant Design
+* Backend: Go, Elasticsearch (database and good for searching geo-locations), GCE (Google Compute Engine), GKE (Google Kubernetes Engine), GCS (Google Cloud Storage, for storing media files), Google Vision API (to provide face detection model)
+
+## Setup
+The backend service is deployed in Google Cloud. 
+* Restart VM instance in GCE
+* SSH to the VM and go run index.go, main.go, user.go, vision.go
+* Update the backend IP address in frontend code
+* npm start frontend code in local IDE
